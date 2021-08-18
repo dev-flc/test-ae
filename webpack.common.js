@@ -34,6 +34,9 @@ module.exports = () => {
                 Img        : path.resolve( __dirname, 'src/assets/img/' ),
                 Img        : path.resolve( __dirname, 'src/assets/img/' ),
                 Components : path.resolve( __dirname, 'src/components/' ),
+                Constants  : path.resolve( __dirname, 'src/constants/' ),
+                Reducers   : path.resolve( __dirname, 'src/store/reducers' ),
+                Actions    : path.resolve( __dirname, 'src/store/actions' )
             }
         },
 

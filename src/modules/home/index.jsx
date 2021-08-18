@@ -1,25 +1,30 @@
-import React, { Component } from "react";
+import React, { Component }   from "react";
+import { connect }            from "react-redux";
+import { bindActionCreators } from 'redux';
+
+import { actionFilter } from 'Actions/home/filter.js'
+import { actionUser } from 'Actions/home/user.js'
 
 import Button from 'Components/button';
 import Card   from 'Components/card';
 import Title  from 'Components/title';
+
+import values from 'lodash/values'
 
 import ImgHome from 'Img/home.svg';
 import Logo    from 'Img/logo.svg'
 
 class Home extends Component {
 
-    handleOnClickFilter = filter => event => {
-        console.log( "filter", filter )
+    handleOnClickFilter = namebutton => event => {
+        this.props.actionFilter( namebutton )
+        this.props.actionUser( 'datatata',"propiedad",1 )
     };
 
     render() {
-        const listCards = [
-            'tarjeta-1', 'tarjeta-2', 'tarjeta-3', 'tarjeta-4',
-            'tarjeta-1', 'tarjeta-2', 'tarjeta-3', 'tarjeta-4',
-            'tarjeta-1', 'tarjeta-2', 'tarjeta-3', 'tarjeta-4',
-            'tarjeta-1', 'tarjeta-2', 'tarjeta-3', 'tarjeta-4'
-        ]
+
+        console.log("data", this.props.filter )
+
         return (
             <div className = "home">
                 <div>
@@ -33,18 +38,19 @@ class Home extends Component {
                     />
                     <div className='buttons'>
                         <Button
-                            onClick = { this.handleOnClickFilter( 'ESTUDIANTES' ) }
+                            onClick = { this.handleOnClickFilter( 'students' ) }
                             label   = { 'ESTUDIANTES' }
                         />
                         <Button
-                            onClick = { this.handleOnClickFilter( 'STAFF' ) }
+                            onClick = { this.handleOnClickFilter( 'staff' ) }
                             label   = { 'STAFF' }
                         />
                     </div>
                     <div className='container-cards' >
-                        { listCards.map( card => (
-                            <Card />
-                        ) ) }
+                        { values( this.props.user_data ).map( data => {
+                            return (
+                            <Card {...data } key = { data.id }/>
+                        ) }) }
                     </div>
                 </div>
             </div>
@@ -52,4 +58,10 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = ( { user_data, filter } ) => ( { user_data, filter } );
+
+const mapDispachToProps = dispatch => ( bindActionCreators( {
+    actionFilter,actionUser
+}, dispatch ) );
+
+export default connect( mapStateToProps, mapDispachToProps ) ( Home );
