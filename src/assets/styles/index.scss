@@ -8,6 +8,7 @@
 @import "./card.scss";
 @import "./header.scss";
 @import "./button.scss";
+@import "./dropdown.scss";
 
 * {
     box-sizing : border-box;
@@ -31,6 +32,7 @@
 }
 
 .container-general {
+    z-index        : 1;
     width          : 100%;
     position       : absolute;
     top            : 0;
@@ -48,7 +50,7 @@
     width       : fit-content;
     margin-top  : 28px;
     padding     : 3px;
-    font-family : $open-regular ;
+    font-family : $open-regular;
     font-style  : normal;
     font-weight : bold;
     font-size   : 36px;
@@ -56,5 +58,3 @@
     text-align  : center;
     color       : #FFFFFF;
 }
-
-

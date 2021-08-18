@@ -57,6 +57,7 @@
 .cart-text-status {
     display        : flex;
     flex-direction : row;
+    align-items    : center;
 }
 
 .text-status{
@@ -78,6 +79,11 @@
     flex-direction  : row;
     justify-content : flex-end;
     width           : 50%;
+}
+
+.text-buton button {
+    border         : none;
+    background     : none;
 }
 
 .cart-text-name {

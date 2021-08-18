@@ -1,4 +1,15 @@
 import { ACTION_USER } from 'Constants/store.js'
+import merge from 'lodash/merge';
+
+const returnStatePropsData = ( payload, state, property, propkey  ) => {
+    const newStateSub = setPropertyData( state[ propkey ] ,payload, property );
+    const { ...rest } = merge( state[ propkey ], newStateSub );
+    return { ...state, [ propkey ] : rest }
+}
+
+const setPropertyData = ( state, payload, propertyName ) => (
+    { ...state, [ propertyName ] : payload  }
+)
 
 export default ( state = {}, action = {} ) => {
     if( !state ) {
@@ -10,11 +21,7 @@ export default ( state = {}, action = {} ) => {
     const { type, payload, property, propKey } = action;
 
     if ( type === ACTION_USER.SET_ACTION_USER_PROP ) {
-        console.log("payload",payload)
-        console.log("property",property)
-        console.log("propKey",propKey)
-        console.log("state",state)
-        //newState = { ...state, [ propKey ] : payload }
+        newState = returnStatePropsData( payload, state, property, propKey );
     }
 
     return newState

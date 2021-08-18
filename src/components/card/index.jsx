@@ -1,9 +1,13 @@
 import React     from 'react';
 import PropTypes from 'prop-types';
 
+import ImgFavorite from 'Img/favorite.svg';
+import ImgFavoriteSelect from 'Img/favorite-select.svg';
+
 const Card = React.memo( (  props ) => {
 
-    let { name ,dateOfBirth, gender, eyeColour, hairColour, image, alive, hogwartsStaff, hogwartsStudent, house } = props;
+    let { name ,dateOfBirth, gender, eyeColour, hairColour, image,
+        alive, hogwartsStaff, hogwartsStudent, house, favorite, onClick } = props;
 
     let type;
 
@@ -16,7 +20,7 @@ const Card = React.memo( (  props ) => {
 
     return (
         <div className = "card">
-            <div className ={ `${ alive == true ? "card-inf" : "card-inf-alive"}` }>
+            <div className = { `${ alive == true ? "card-inf" : "card-inf-alive"}` }>
                 <div className = { `card-img-cont ${ house }` } >
                         <img src = { image } ></img>
                 </div>
@@ -25,7 +29,9 @@ const Card = React.memo( (  props ) => {
                         <div className = "cart-text-status">
                             <div className = "text-status"><p>{ `${ alive == true ? "VIVO": "FINADO"} / ${ type }` }</p></div>
                             <div className = "text-buton">
-                                <button>boton</button>
+                                <button onClick = { onClick }>
+                                    <img src = {  favorite == true ? ImgFavoriteSelect : ImgFavorite } ></img>
+                                </button>
                             </div>
                         </div>
                         <div className = "cart-text-name">
@@ -57,16 +63,19 @@ Card.propTypes = {
     eyeColour   : PropTypes.string,
     hairColour  : PropTypes.string,
     image       : PropTypes.string,
-    alive       : PropTypes.bool
+    alive       : PropTypes.bool,
+    favorite    : PropTypes.bool,
+    onClick     : PropTypes.func.isRequired,
 }
 
 Card.defaultProps = {
-    name      : "Harry Poter",
+    name        : "Harry Poter",
     dateOfBirth : "31-07-1980",
     gender      : "Male",
     eyeColour   : "Green",
     hairColour  : "black",
-    alive       :  true
+    alive       :  true,
+    favorite    :  true,
 }
 
 export  default ( Card );

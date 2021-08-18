@@ -2,6 +2,7 @@ export const INITIAL_STATE = {
     user_data : {
         1 : {
             "id" : 1,
+            "favorite":true,
             "name": "Harry Potter",
             "species": "human",
             "gender": "male",
@@ -25,6 +26,7 @@ export const INITIAL_STATE = {
         },
         2: {
             "id":2,
+            "favorite":false,
             "name": "Luna Lovegood",
             "species": "human",
             "gender": "female",
@@ -48,6 +50,7 @@ export const INITIAL_STATE = {
         },
         3: {
             "id" : 3,
+            "favorite":false,
             "name": "Severus Snape",
             "species": "human",
             "gender": "male",
@@ -71,6 +74,7 @@ export const INITIAL_STATE = {
         },
         4 : {
             "id": 4,
+            "favorite":false,
             "name": "Draco Malfoy",
             "species": "human",
             "gender": "male",
@@ -94,6 +98,7 @@ export const INITIAL_STATE = {
         },
         5 : {
             "id": 5,
+            "favorite":true,
             "name": "Cedric Diggory",
             "species": "human",
             "gender": "male",
@@ -112,7 +117,55 @@ export const INITIAL_STATE = {
             "hogwartsStudent": true,
             "hogwartsStaff": false,
             "actor": "Robert Pattinson",
-            "alive": false,
+            "alive": true,
+            "image": "http://hp-api.herokuapp.com/images/cedric.png"
+        },
+        6 : {
+            "id": 6,
+            "favorite":false,
+            "name": "Cedric Diggory",
+            "species": "human",
+            "gender": "male",
+            "house": "Hufflepuff",
+            "dateOfBirth": "",
+            "yearOfBirth": 1977,
+            "ancestry": "",
+            "eyeColour": "grey",
+            "hairColour": "brown",
+            "wand": {
+                "wood": "ash",
+                "core": "unicorn hair",
+                "length": 12.25
+            },
+            "patronus": "",
+            "hogwartsStudent": true,
+            "hogwartsStaff": false,
+            "actor": "Robert Pattinson",
+            "alive": true,
+            "image": "http://hp-api.herokuapp.com/images/cedric.png"
+        },
+        7 : {
+            "id": 7,
+            "favorite":false,
+            "name": "Cedric Diggory",
+            "species": "human",
+            "gender": "male",
+            "house": "Hufflepuff",
+            "dateOfBirth": "",
+            "yearOfBirth": 1977,
+            "ancestry": "",
+            "eyeColour": "grey",
+            "hairColour": "brown",
+            "wand": {
+                "wood": "ash",
+                "core": "unicorn hair",
+                "length": 12.25
+            },
+            "patronus": "",
+            "hogwartsStudent": true,
+            "hogwartsStaff": false,
+            "actor": "Robert Pattinson",
+            "alive": true,
             "image": "http://hp-api.herokuapp.com/images/cedric.png"
         },
     },
