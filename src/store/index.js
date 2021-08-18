@@ -14,7 +14,7 @@ import  { INITIAL_STATE } from './initial-state.js';
 const REDUCER = compose ( mergePersistedState() )( allReducers );
 
 /**NOTE: Declaración de persistencia en el sessionStorage */
-const STORAGE = compose ( filter( [ "home" ] ) ) ( adapter( sessionStorage ) );
+const STORAGE = compose ( filter( [ "user_data","filter" ] ) ) ( adapter( sessionStorage ) );
 
 const CREATE_PERSISTENT_STORE = compose (
     persistState( STORAGE, 'test-aeromexico' ),

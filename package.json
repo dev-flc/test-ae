@@ -4,7 +4,12 @@
     "description": "Test-Aeromexico",
     "main": "index.js",
     "scripts": {
-        "dev": "VERSION_APP=$npm_package_version webpack-dev-server --progress --config webpack.dev.js"
+        "devWin": "SET VERSION_APP=%npm_package_version%& webpack-dev-server --progress --config webpack.dev.js",
+        "dev": "VERSION_APP=$npm_package_version webpack-dev-server --progress --config webpack.dev.js",
+        "initdeploy": "gcloud config set project forevertucode",
+        "deploy": "firebase deploy --only hosting",
+        "build": "VERSION_APP=$npm_package_version webpack --config webpack.prod.js",
+        "buildWin": "SET VERSION_APP=%npm_package_version%& webpack --config webpack.prod.js"
     },
     "keywords": [
         "React",
@@ -39,7 +44,10 @@
         "webpack-merge": "4.2.2",
         "webpack-node-externals": "1.7.2",
         "webpackbar": "4.0.0",
-        "uglifyjs-webpack-plugin": "2.1.2"
+        "uglifyjs-webpack-plugin": "2.1.2",
+        "mini-css-extract-plugin": "0.4.0",
+        "optimize-css-assets-webpack-plugin": "4.0.2",
+        "compression-webpack-plugin": "1.1.11"
     },
     "dependencies": {
         "react": "16.8.6",
