@@ -1,0 +1,109 @@
+.modal {
+    position   : fixed;
+    top        : 0;
+    left       : 0;
+    width      :100%;
+    height     : 100%;
+    background : rgba(0, 0, 0, 0.6);
+    z-index    : 9;
+}
+
+.modal-main {
+    position      : fixed;
+    background    : white;
+    width         : 727px;
+    height        : 596px;
+    top           :50%;
+    left          :50%;
+    transform     : translate(-50%,-50%);
+    border-radius : 10px;
+    padding       : 18px;
+}
+.modal-buton-close{
+    background : none;
+    border     : none;
+}
+.modal-mai-label {
+    display     : flex;
+    font-family : $open-regular;
+    font-style  : normal;
+    font-weight : 600;
+    font-size   : 24px;
+    line-height : 40px;
+    color       : #000000;
+}
+.main-label{
+    width : 90%;
+}
+.main-buton {
+    width   : 10%;
+    display : flex;
+}
+.display-block {
+    display : block;
+}
+
+.display-none {
+    display : none;
+}
+
+input:focus {
+    outline : none;
+}
+
+.modal-input {
+    width         : 310px;
+    height        : 73px;
+    border        : none;
+    border-bottom : 2px solid #D7DBDD;
+    color         : #263238;
+    font-size     : 14px;
+    background    : #F8F9F9;
+    border-radius : 5.33333px 5.33333px 0px 0px;
+}
+
+.modal-radio {
+    font-family    : $open-regular;
+    font-style     : normal;
+    font-weight    : normal;
+    font-size      : 16px;
+    line-height    : 24px;
+    letter-spacing : 0.01em;
+    color          : #263238;
+}
+
+.modal-p {
+    font-family    : $open-regular;
+    font-style     : normal;
+    font-weight    : normal;
+    font-size      : 14px;
+    line-height    : 32px;
+    display        : flex;
+    align-items    : center;
+    letter-spacing : 0.01em;
+    color          : #263238;
+}
+
+.modal-body {
+    width      : 100%;
+    margin-top : 30px
+}
+
+.modal-inputs {
+    width         : auto;
+    margin-bottom : 16px;
+    display       : flex;
+}
+.inputs-cont{
+    width : 100%;
+}
+
+.container-radio {
+    display : flex;
+}
+
+.radio-inf {
+    width       : 31%;
+    display     : flex;
+    align-items : center;
+}
