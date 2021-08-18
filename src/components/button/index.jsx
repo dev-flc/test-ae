@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Button = React.memo( ( { label, ...props } ) => {
     return (
-        <div  className= "container-buton">
-            <button className='buton' {...props}>
+        <div  className = "container-buton">
+            <button className ='buton' {...props }>
                 { label }
             </button>
         </div>

@@ -17,9 +17,19 @@ import Logo    from 'Img/logo.svg'
 
 class Home extends Component {
 
-    handleOnClickFilter = namebutton => event => {
-        this.props.actionFilter( namebutton )
-        this.props.actionUser( 'datatata',"propiedad",1 )
+    handleOnClickFilter = namebutton => () => {
+        this.props.actionFilter( namebutton );
+    };
+
+    handleOnClickFavorite = idUserFavorite => () => {
+        let { user_data, actionUser } = this.props;
+        let user_favorites = filter( user_data, { 'favorite' : true } )
+
+        if( user_favorites.length < 5 || user_data[ idUserFavorite ].favorite === true) {
+            actionUser( !user_data[ idUserFavorite ].favorite,"favorite",idUserFavorite )
+        } else {
+            alert( "Ups... solo puede haber 5 favoritos" )
+        }
     };
 
     render() {
@@ -61,7 +71,7 @@ class Home extends Component {
                     <div className='container-cards' >
                         { new_data_user.map( data => {
                             return (
-                            <Card {...data } key = { data.id }/>
+                            <Card {...data } key = { data.id } onClick = { this.handleOnClickFavorite(data.id) }/>
                         ) }) }
                     </div>
                 </div>
