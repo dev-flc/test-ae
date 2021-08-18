@@ -10,6 +10,7 @@ import Card   from 'Components/card';
 import Title  from 'Components/title';
 
 import values from 'lodash/values'
+import filter from 'lodash/filter'
 
 import ImgHome from 'Img/home.svg';
 import Logo    from 'Img/logo.svg'
@@ -22,8 +23,19 @@ class Home extends Component {
     };
 
     render() {
+        let { filters, user_data } = this.props;
+        let { hogwartsStudent, hogwartsStaff } = filters;
+        let new_data_user;
 
-        console.log("data", this.props.filter )
+        if ( hogwartsStudent == false && hogwartsStaff == false) {
+            new_data_user = values( user_data )
+        }
+        else if ( hogwartsStudent == true && hogwartsStaff == false) {
+            new_data_user = filter( user_data, { 'hogwartsStudent' : true } )
+        }
+        else if ( hogwartsStudent == false && hogwartsStaff == true) {
+            new_data_user = filter( user_data, { 'hogwartsStaff' : true } )
+        }
 
         return (
             <div className = "home">
@@ -47,7 +59,7 @@ class Home extends Component {
                         />
                     </div>
                     <div className='container-cards' >
-                        { values( this.props.user_data ).map( data => {
+                        { new_data_user.map( data => {
                             return (
                             <Card {...data } key = { data.id }/>
                         ) }) }
@@ -58,7 +70,7 @@ class Home extends Component {
     }
 }
 
-const mapStateToProps = ( { user_data, filter } ) => ( { user_data, filter } );
+const mapStateToProps = ( { user_data, filter } ) => ( { user_data, filters: filter } );
 
 const mapDispachToProps = dispatch => ( bindActionCreators( {
     actionFilter,actionUser
