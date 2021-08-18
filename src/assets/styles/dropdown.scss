@@ -1,0 +1,103 @@
+.container-list{
+    display       : flex;
+    align-items   : center;
+    border-bottom : 1px solid #403B6D;
+    font-family   : $open-regular;
+    font-style    : normal;
+    font-weight   : 600;
+    font-size     : 18px;
+    line-height   : 25px;
+    text-align    : center;
+    color         : #FFFFFF;
+}
+
+.container-list > div  {
+    display : flex;
+}
+
+.container-list > div > img {
+    height        : 34px;
+    width         : 34px;
+    border-radius : 50%;
+}
+
+.container-list > div > button {
+    border     : none;
+    background : none;
+}
+
+.dropdown {
+    z-index          : -1;
+    background-color : #6B63B5;
+    position         : absolute;
+    top              : 96%;
+    left             : 0;
+    width            : 280px;
+    border           : 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow       : 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+    border-radius    : 0px 0px 10px 10px;
+}
+
+ul {
+    list-style : none;
+    padding    : 0;
+    margin     : 0;
+}
+
+li {
+    padding : 8px 12px;
+}
+
+li:hover {
+    background-color : rgba(0, 0, 0, 0.14);
+    cursor           : pointer;
+}
+
+.container {
+    z-index  : 2;
+    position : absolute;
+    width    : 100%;
+}
+
+.container-butons {
+    width          : 280px;
+    position       : relative;
+    left           : 35%;
+    z-index        : 5;
+    display        : flex;
+    flex-direction : row;
+    align-items    : center;
+}
+
+.container-butons-color {
+    background : #6B63B5 ;
+}
+
+.dropdown-button {
+    width         : 140px;
+    height        : 36px;
+    background    : #6B63B5;
+    border-radius : 0px 0px 10px 10px;
+    font-family   : $open-regular;
+    font-style    : normal;
+    font-size     : 14px;
+    line-height   : 25px;
+    text-align    : center;
+    color         : #FFFFFF;
+    border        : 1px solid #403B6D;
+    box-shadow    : 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display       : flex;
+    align-items   : center;
+}
+
+.list-img {
+    width : 25%;
+}
+
+.list-name {
+    width : 50%;
+}
+
+.list-trash {
+    width : 25%;
+}

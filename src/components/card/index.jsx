@@ -20,7 +20,7 @@ const Card = React.memo( (  props ) => {
 
     return (
         <div className = "card">
-            <div className ={ `${ alive == true ? "card-inf" : "card-inf-alive"}` }>
+            <div className = { `${ alive == true ? "card-inf" : "card-inf-alive"}` }>
                 <div className = { `card-img-cont ${ house }` } >
                         <img src = { image } ></img>
                 </div>
