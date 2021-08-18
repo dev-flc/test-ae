@@ -27,7 +27,15 @@ module.exports = () => {
             publicPath    : '/'
         },
 
-        resolve : { extensions : [ '.jsx', '.js' ] },
+        resolve : {
+            extensions : [ '.jsx', '.js' ],
+            alias      : {
+                Modules    : path.resolve( __dirname, 'src/modules' ),
+                Img        : path.resolve( __dirname, 'src/assets/img/' ),
+                Img        : path.resolve( __dirname, 'src/assets/img/' ),
+                Components : path.resolve( __dirname, 'src/components/' ),
+            }
+        },
 
         module : {
             rules : [

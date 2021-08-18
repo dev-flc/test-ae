@@ -1,0 +1,39 @@
+.buttons {
+    width           : 47%;
+    display         : flex;
+    flex-direction  : row;
+    justify-content : space-around;
+    margin-top      : 30px;
+}
+
+.container-buton{
+    width   : 50%;
+    display : flex;
+}
+
+.buton{
+    border         : 4px solid #6B63B5;
+    background     : rgba(0, 0, 0, 0.6);;
+    font-family    : $open-regular;
+    font-style     : normal;
+    font-weight    : 600;
+    font-size      : 17px;
+    line-height    : 25px;
+    text-align     : center;
+    letter-spacing : 0.2em;
+    color          : #FFFFFF;
+    width          : 288px;
+    height         : 67px;
+}
+
+.buton:hover {
+    background : rgba(107, 99, 181, 0.6);;
+}
+
+.buton:active {
+    background :#6B63B5;
+}
+
+.buton:focus {
+    background :#6B63B5;
+}
