@@ -1,0 +1,28 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**",
+        ".git",
+        ".gitignore",
+        "node_modules/",
+        "src/",
+        ".package-lock.json",
+        "README.md",
+        "webpack.common.js",
+        "webpack.dev.js",
+        "webpack.prod.js",
+        ".babelrc",
+        ".editorconfig",
+        "LICENCE"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

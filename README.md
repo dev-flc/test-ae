@@ -1,5 +1,7 @@
 # FRONT-END TEST-AEROMEXICO
 
+### __Link:__ https://test-aeromexico.web.app/
+
 ### __Instalaciones previas y librerias relevantes__
 
 Software:
@@ -79,6 +81,7 @@ Para mas información consultar la siguiente  [Documentación](https://firebase.
 * Mejor estructura de los componentes
 * Mejorar la estructura del store
 * Mejorar la declaración de las varibles o configurar un tema en sass
+* El formulario para hacer el alta de un nuevo usuario esta imcompleto ya que se requieren de mas campos para poder hacer una alta del mismo
 
 ### Descríbenos un pain point o bug con el que te hayas encontrado y como lo solucionaste?
 
