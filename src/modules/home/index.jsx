@@ -255,14 +255,15 @@ class Home extends Component {
                         />
                     </div>
 
-                    <div className='container-cards' >
+                    <div className='uno' >
                         { new_data_user.map( data => {
                             return (
-                            <Card {...data } key = { data.id } onClick = { this.handleOnClickFavorite( data.id ) }/>
-                        ) } ) }
-                    </div>
-                </div>
 
+                            <Card {...data } key = { data.id } onClick = { this.handleOnClickFavorite( data.id ) }/>
+                            ) } ) }
+                    </div>
+
+                </div>
             </div>
         )
     }

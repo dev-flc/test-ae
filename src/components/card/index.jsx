@@ -19,37 +19,37 @@ const Card = React.memo( (  props ) => {
     }
 
     return (
-        <div className = "card">
-            <div className = { `${ alive == true ? "card-inf" : "card-inf-alive"}` }>
-                <div className = { `card-img-cont ${ house }` } >
-                        <img src = { image } ></img>
+        <div className ="dos">
+            <div className= { `tres tres-uno file-info ${ house }` } >
+                <div className ="image-user">
+                    <img src = { image } ></img>
                 </div>
-                <div className ="card-text-cont">
-                    <div className ="text-cont">
-                        <div className = "cart-text-status">
-                            <div className = "text-status"><p>{ `${ alive == true ? "VIVO": "FINADO"} / ${ type }` }</p></div>
-                            <div className = "text-buton">
-                                <button onClick = { onClick }>
-                                    <img src = {  favorite == true ? ImgFavoriteSelect : ImgFavorite } ></img>
-                                </button>
-                            </div>
-                        </div>
-                        <div className = "cart-text-name">
-                            <h3>{ name }</h3>
-                        </div>
-                        <div className = "cart-text-inf">
-                            <p> Cumpleaños: <span> { dateOfBirth }</span></p>
-                        </div>
-                        <div className = "cart-text-inf">
-                            <p> Género: <span>{ gender }, {house}</span></p>
-                        </div>
-                        <div className = "cart-text-inf">
-                            <p> Color de ojos: <span>{ eyeColour }</span></p>
-                        </div>
-                        <div className = "cart-text-inf">
-                            <p> Color de pelo: <span>{ hairColour }</span></p>
-                        </div>
+            </div>
+            <div className= "tres tres-dos inf">
+                <div className = "cuatro cuatro-status">
+                    <div className = "text-status"><p>{ `${ alive == true ? "VIVO": "FINADO"} / ${ type }` }</p></div>
+                    <div className = "text-buton">
+                        <button onClick = { onClick }>
+                            <img src = {  favorite == true ? ImgFavoriteSelect : ImgFavorite } ></img>
+                        </button>
                     </div>
+                </div>
+
+                <div className = "cuatro cuatro-name">
+                    <h3>{ name }</h3>
+                </div>
+
+                <div className = "cuatro cuatro-info">
+                    <p> Cumpleaños: <span> { dateOfBirth }</span></p>
+                </div>
+                <div className = "cuatro cuatro-info">
+                    <p> Género: <span>{ gender }, {house}</span></p>
+                </div>
+                <div className = "cuatro cuatro-info">
+                    <p> Color de ojos: <span>{ eyeColour }</span></p>
+                </div>
+                <div className = "cuatro cuatro-info">
+                    <p> Color de pelo: <span>{ hairColour }</span></p>
                 </div>
             </div>
         </div>
