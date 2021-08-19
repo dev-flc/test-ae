@@ -4,11 +4,21 @@
     flex-direction  : row;
     justify-content : space-around;
     margin-top      : 30px;
+    @media screen and ( min-width : 20em ) and ( max-width :  48em ) { /*768*/
+        width   : 97%;
+    }
+
+    @media screen and ( min-width : 48.1em ) and ( max-width :  64em ) { /*768*/
+        width   : 66%;
+    }
 }
 
 .container-buton{
     width   : 50%;
     display : flex;
+    @media screen and ( min-width : 20em ) and ( max-width : 48em ) {
+        width   : 60%;
+    }
 }
 
 .buton{
@@ -24,6 +34,12 @@
     color          : #FFFFFF;
     width          : 288px;
     height         : 67px;
+    @media screen and ( min-width : 20em ) and ( max-width :  48em ) { /*768*/
+        width   : 94%;
+    }
+    @media screen and ( min-width : 48.1em ) and ( max-width :  64em ) { /*768*/
+        width   : 94%;
+    }
 }
 
 .buton:hover {

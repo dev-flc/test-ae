@@ -45,6 +45,9 @@
 .logo {
     display    : flex;
     margin-top : 128px;
+    @media screen and ( min-width : 20em ) and ( max-width :  48em ) { /*768*/
+        margin-top : 60px;
+    }
 }
 
 .title {
@@ -58,4 +61,8 @@
     line-height : 25px;
     text-align  : center;
     color       : #FFFFFF;
+    @media screen and ( min-width : 20em ) and ( max-width :  48em ) { /*768*/
+        font-size   : 30px;
+    }
 }
+

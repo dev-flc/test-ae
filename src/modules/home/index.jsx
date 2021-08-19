@@ -35,7 +35,6 @@ class Home extends Component {
         hairColour      : "",
     };
 
-    container = React.createRef();
 
     componentDidMount() {
         document.addEventListener("mousedown", this.handleClickOutside);
@@ -255,6 +254,7 @@ class Home extends Component {
                             label   = { 'STAFF' }
                         />
                     </div>
+
                     <div className='container-cards' >
                         { new_data_user.map( data => {
                             return (
@@ -262,6 +262,7 @@ class Home extends Component {
                         ) } ) }
                     </div>
                 </div>
+
             </div>
         )
     }
