@@ -35,7 +35,6 @@ class Home extends Component {
         hairColour      : "",
     };
 
-    container = React.createRef();
 
     componentDidMount() {
         document.addEventListener("mousedown", this.handleClickOutside);
@@ -255,12 +254,15 @@ class Home extends Component {
                             label   = { 'STAFF' }
                         />
                     </div>
-                    <div className='container-cards' >
+
+                    <div className='uno' >
                         { new_data_user.map( data => {
                             return (
+
                             <Card {...data } key = { data.id } onClick = { this.handleOnClickFavorite( data.id ) }/>
-                        ) } ) }
+                            ) } ) }
                     </div>
+
                 </div>
             </div>
         )

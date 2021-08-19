@@ -14,7 +14,7 @@ module.exports = merge( common(), {
 
     devServer    : {
         historyApiFallback : true,
-        host               : '127.0.0.1',
+        host               : '192.168.1.77',
         port               : 8087,
         open               : true,
         inline             : true,
