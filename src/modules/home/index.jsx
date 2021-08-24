@@ -35,15 +35,6 @@ class Home extends Component {
         hairColour      : "",
     };
 
-
-    componentDidMount() {
-        document.addEventListener("mousedown", this.handleClickOutside);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener("mousedown", this.handleClickOutside);
-    }
-
     handleClickFavorite = () => {
         this.setState( state => ( { open_dropdown : !state.open_dropdown } ) );
     }
@@ -102,12 +93,6 @@ class Home extends Component {
         this.setState( state => ( { show_modal : !state.show_modal } ) );
     }
 
-    handleClickOutside = event => {
-        if ( this.container.current && !this.container.current.contains( event.target ) ) {
-            this.setState( { open_dropdown : false } );
-        }
-    };
-
     handleOnClickFilter = namebutton => () => {
         this.props.actionFilter( namebutton );
     };
@@ -126,19 +111,21 @@ class Home extends Component {
 
         let { filters, user_data } = this.props;
         let { open_dropdown, show_modal } = this.state;
-        let { hogwartsStudent, hogwartsStaff } = filters;
+        let { hogwartsStudent, hogwartsStaff, hogwartfinado } = filters;
         let new_data_user;
 
-        if ( hogwartsStudent == false && hogwartsStaff == false) {
+        if ( hogwartsStudent == false && hogwartsStaff == false && hogwartfinado == false) {
             new_data_user = values( user_data )
         }
-        else if ( hogwartsStudent == true && hogwartsStaff == false) {
+        else if ( hogwartsStudent == true && hogwartsStaff == false && hogwartfinado == false ) {
             new_data_user = filter( user_data, { 'hogwartsStudent' : true } )
         }
-        else if ( hogwartsStudent == false && hogwartsStaff == true) {
+        else if ( hogwartsStudent == false && hogwartsStaff == true && hogwartfinado == false) {
             new_data_user = filter( user_data, { 'hogwartsStaff' : true } )
         }
-
+        else if ( hogwartsStudent == false && hogwartsStaff == false && hogwartfinado == true) {
+            new_data_user = filter( user_data, { 'alive' : false } )
+        }
         let data_favorite_users = filter ( new_data_user, { 'favorite' : true })
 
         return (
@@ -197,7 +184,7 @@ class Home extends Component {
                         <div className = "modal-inputs">
                             <p>FOTOGRAFIA</p>
                         </div>
-                        <div className = "modal-inputs">
+                        <div className = "modal-inputs cont-buton-molda">
                             <Button
                                 onClick = { this.handleClickSaveUser }
                                 label   = { 'GUARDAR' }
@@ -213,6 +200,7 @@ class Home extends Component {
                         <button className="dropdown-button" onClick = { this.handleClickModal } >
                             <div>AGREGAR</div>  <img src = { UserAdd } ></img>
                         </button>
+
                         {   open_dropdown && (
                             <div className="dropdown">
                                 <ul>
@@ -245,14 +233,24 @@ class Home extends Component {
                         title = "Selecciona tu filtro"
                     />
                     <div className='buttons'>
-                        <Button
-                            onClick = { this.handleOnClickFilter( 'students' ) }
-                            label   = { 'ESTUDIANTES' }
-                        />
+                        <div className='buttons-cont'>
+                            <Button
+                                onClick = { this.handleOnClickFilter( 'students' ) }
+                                label   = { 'ESTUDIANTES' }
+                            />
+                        </div>
+                        <div className='buttons-cont'>
                         <Button
                             onClick = { this.handleOnClickFilter( 'staff' ) }
                             label   = { 'STAFF' }
                         />
+                        </div>
+                        <div className='buttons-cont'>
+                        <Button
+                            onClick = { this.handleOnClickFilter( 'finado' ) }
+                            label   = { 'FALLECIDOS' }
+                        />
+                        </div>
                     </div>
 
                     <div className='uno' >

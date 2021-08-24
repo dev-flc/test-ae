@@ -45,7 +45,7 @@ export const INITIAL_STATE = {
             "hogwartsStudent": true,
             "hogwartsStaff": false,
             "actor": "Evanna Lynch",
-            "alive": true,
+            "alive": false,
             "image": "http://hp-api.herokuapp.com/images/luna.jpg"
         },
         3: {
@@ -172,6 +172,7 @@ export const INITIAL_STATE = {
     filter : {
         "hogwartsStudent" : false,
         "hogwartsStaff"   : false,
+        "hogwartfinado"   : false
     }
 }
 

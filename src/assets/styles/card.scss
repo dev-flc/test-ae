@@ -321,6 +321,14 @@
         flex-flow : row wrap-reverse
     }
 }
+.tres-dos-finado{
+    background: #CCCCCC;
+    border-radius : 0px 16px 16px 0px;
+    @media screen and ( max-width : 768px ){
+        border-radius: 0px 0px 16px 16px;
+        flex-flow : row wrap-reverse
+    }
+}
 
 .cuatro {
     display : flex;

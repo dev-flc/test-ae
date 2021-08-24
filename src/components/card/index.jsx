@@ -25,7 +25,7 @@ const Card = React.memo( (  props ) => {
                     <img src = { image } ></img>
                 </div>
             </div>
-            <div className= "tres tres-dos inf">
+            <div className= { `tres tres-dos inf ${ !alive && "tres-dos-finado" }` } >
                 <div className = "cuatro cuatro-status">
                     <div className = "text-status"><p>{ `${ alive == true ? "VIVO": "FINADO"} / ${ type }` }</p></div>
                     <div className = "text-buton">
